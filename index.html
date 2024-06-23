@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hacking Menu</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .menu {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin: auto;
+  }
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+</style>
+</head>
+<body>
+  <h2>Choose a person to hack for educational purposes:</h2>
+  <div class="menu">
+    <button class="button" onclick="fakeHack('Omar')">Omar</button>
+    <button class="button" onclick="fakeHack('Iyad')">Iyad</button>
+    <button class="button" onclick="fakeHack('Rayan')">Rayan</button>
+    <button class="button" onclick="fakeHack('Zayan')">Zayan</button>
+    <button class="button" onclick="fakeHack('Qosay')">Qosay</button>
+  </div>
+
+  <script>
+    function fakeHack(name) {
+      alert(`Cracking passwords for ${name}...`);
+      // Generate a random password
+      let password = generateRandomPassword();
+      // Display the password to the user
+      alert(`Here is the password for ${name}: ${password}`);
+    }
+
+    function generateRandomPassword() {
+      let length = 8; // Length of the password
+      let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"; // Characters to include in the password
+      let password = "";
+      for (let i = 0; i < length; i++) {
+        let randomIndex = Math.floor(Math.random() * charset.length);
+        password += charset.charAt(randomIndex);
+      }
+      return password;
+    }
+  </script>
+</body>
+</html>
